@@ -1,0 +1,17 @@
+<p>menu-list works!</p>
+{{ menuLists | json }}
+
+//*ngFor
+
+<b>
+<span *ngFor="let item of menuLists">
+    {{ item  | json}}
+</span>
+</b>
+<br>
+
+<div *ngFor="let nm of numbers">
+Sr. {{nm}}
+</div>
+
+<app-menu-item></app-menu-item>
