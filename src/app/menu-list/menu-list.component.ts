@@ -30,4 +30,8 @@ export class MenuListComponent {
     icon: "bin"
   }];
 
+  getItemValue(valueFromChild: string) {
+    console.log(valueFromChild)
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu-item',
@@ -10,16 +10,23 @@ export class MenuItemComponent implements OnInit {
 
   @Input() layout: any;
 
-  //custome logic 
+  @Output() itemAdded = new EventEmitter();
+
+  
 
   ngOnInit() {
     this.fixLayoutOfMenus();
+    this.itemAdded.emit("I am from XCHILD");
   }
 
   //
   private fixLayoutOfMenus() {
     console.log( `This value comming from parant  :  --> `);
     console.log(this.layout)
+  }
+
+  addNewItem(value: string) {
+    console.log(value)
   }
 
 }

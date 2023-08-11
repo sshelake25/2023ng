@@ -1,7 +1,7 @@
 <p>menu-list works!</p>
 
 
-<app-menu-item *ngFor="let mitem of menuLists"  [layout]="layoutConfig"  [itemConfig]="mitem" ></app-menu-item>
+<app-menu-item *ngFor="let mitem of menuLists" (itemAdded)="getItemValue($event)"  [layout]="layoutConfig"  [itemConfig]="mitem" ></app-menu-item>
 
 
 
