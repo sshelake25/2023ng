@@ -15,6 +15,7 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
 import { BirthHistoryComponent } from './birth-history/birth-history.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AnimalHistoryComponent } from './animal-history/animal-history.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MasterActionComponent,
     PatientHistoryComponent,
     BirthHistoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AnimalHistoryComponent
   ],
   imports: [
     BrowserModule,
