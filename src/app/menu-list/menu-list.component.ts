@@ -9,6 +9,8 @@ export class MenuListComponent {
 
   numbers = [10, 20, 30];
 
+  fromChild: string [] =  [];
+
   layoutConfig = {
     direction: 'row',
     height: '100'
@@ -31,7 +33,7 @@ export class MenuListComponent {
   }];
 
   getItemValue(valueFromChild: string) {
-    console.log(valueFromChild)
+   this.fromChild.push(valueFromChild);
   }
 
 }

@@ -16,17 +16,16 @@ export class MenuItemComponent implements OnInit {
 
   ngOnInit() {
     this.fixLayoutOfMenus();
-    this.itemAdded.emit("I am from XCHILD");
+    
   }
 
-  //
   private fixLayoutOfMenus() {
     console.log( `This value comming from parant  :  --> `);
     console.log(this.layout)
   }
 
   addNewItem(value: string) {
-    console.log(value)
+    this.itemAdded.emit(value);
   }
 
 }
