@@ -1,6 +1,11 @@
 <p>menu-list works!</p>
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
 
+
+<app-menu-item *ngFor="let mitem of menuLists"  [itemConfig]="mitem" ></app-menu-item>
+
+
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<!-- 
 {{ menuLists | json }}
 
 //*ngFor
@@ -14,6 +19,6 @@
 
 <div *ngFor="let nm of numbers">
 Sr. {{nm}}
-</div>
+</div> -->
 
-<app-menu-item></app-menu-item>
+
