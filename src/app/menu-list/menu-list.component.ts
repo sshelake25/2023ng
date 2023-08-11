@@ -6,15 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-list.component.css']
 })
 export class MenuListComponent {
- 
+
   numbers = [10, 20, 30];
+
+  layoutConfig = {
+    direction: 'row',
+    height: '100'
+  }
 
   menuLists = [{
     name: "app",
-    icon: "google"
+    icon: "favorite"
   }, {
     name: "status",
-    icon: "micros"
+    icon: "home"
+  },
+  {
+    name: "home care",
+    icon: "cancel"
+  },
+  {
+    name: "more",
+    icon: "bin"
   }];
 
 }

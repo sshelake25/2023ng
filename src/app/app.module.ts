@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MasterActionComponent } from './master-action/master-action.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
