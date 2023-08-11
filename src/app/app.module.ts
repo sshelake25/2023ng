@@ -13,6 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { BirthHistoryComponent } from './birth-history/birth-history.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BirthHistoryComponent } from './birth-history/birth-history.component';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
