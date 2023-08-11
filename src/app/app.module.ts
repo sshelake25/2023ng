@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { BirthHistoryComponent } from './birth-history/birth-history.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HeaderComponent,
     MasterActionComponent,
     PatientHistoryComponent,
-    BirthHistoryComponent
+    BirthHistoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
