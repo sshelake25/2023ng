@@ -11,6 +11,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MasterActionComponent } from './master-action/master-action.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
+import { PatientHistoryComponent } from './patient-history/patient-history.component';
+import { BirthHistoryComponent } from './birth-history/birth-history.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {MatIconModule} from '@angular/material/icon';
     MenuItemComponent,
     MenuListComponent,
     HeaderComponent,
-    MasterActionComponent
+    MasterActionComponent,
+    PatientHistoryComponent,
+    BirthHistoryComponent
   ],
   imports: [
     BrowserModule,

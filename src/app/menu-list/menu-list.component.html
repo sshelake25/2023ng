@@ -1,8 +1,10 @@
 <p>menu-list works!</p>
-<h2>from child{{fromChild | json}}</h2>
+<h2>from child{{ fromChild | json }}</h2>
 
-<app-menu-item *ngFor="let mitem of menuLists" (itemAdded)="getItemValue($event)"  [layout]="layoutConfig"  [itemConfig]="mitem" ></app-menu-item>
-
-
-
-
+<app-menu-item
+  *ngFor="let mitem of menuLists"
+  (itemAdded)="getItemValue($event)"
+  [layout]="layoutConfig"
+  [itemConfig]="mitem"
+>
+</app-menu-item>
