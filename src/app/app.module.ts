@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TestImageDirective } from './test-image.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     BirthHistoryComponent,
     NotFoundComponent,
     AnimalHistoryComponent,
-    HomeComponent
+    HomeComponent,
+    TestImageDirective
   ],
   imports: [
     BrowserModule,
