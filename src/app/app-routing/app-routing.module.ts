@@ -5,10 +5,18 @@ import { AnimalHistoryComponent } from '../animal-history/animal-history.compone
 import { BirthHistoryComponent } from '../birth-history/birth-history.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { PatientHistoryComponent } from '../patient-history/patient-history.component';
+import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
   {
-    path: 'birth-history/:patient-id',
+    path: '',
+    component: HomeComponent,
+    data: {
+      title: "home",
+    }
+  },
+  {
+    path: 'birth-history',
     component: BirthHistoryComponent,
     data: {
       title: "hell0",

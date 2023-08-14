@@ -16,6 +16,7 @@ import { BirthHistoryComponent } from './birth-history/birth-history.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AnimalHistoryComponent } from './animal-history/animal-history.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AnimalHistoryComponent } from './animal-history/animal-history.componen
     PatientHistoryComponent,
     BirthHistoryComponent,
     NotFoundComponent,
-    AnimalHistoryComponent
+    AnimalHistoryComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
