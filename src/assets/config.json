@@ -2,16 +2,22 @@
   {
     "heroesUrl": "api/heroes",
     "textfile": "assets/textfile.txt",
-    "date": "2020-01-29"
+    "date": "2020-01-29",
+    "name": "hello",
+    "age": 20
   },
   {
     "heroesUrl": "api/heroes",
     "textfile": "assets/textfile.txt",
-    "date": "2020-01-29"
+    "date": "2020-01-29",
+    "name": "foo",
+    "age": 40
   },
   {
     "heroesUrl": "api/heroes",
     "textfile": "assets/textfile.txt",
-    "date": "2020-01-29"
+    "date": "2020-01-29",
+    "name": "bar",
+    "age": 30
   }
 ]

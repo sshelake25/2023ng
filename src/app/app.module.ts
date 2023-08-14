@@ -18,6 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AnimalHistoryComponent } from './animal-history/animal-history.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatIconModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatCheckboxModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
