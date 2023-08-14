@@ -48,6 +48,8 @@ export class HomeComponent implements OnInit {
 
   public configs?: any;
 
+  configDisplayedColumns: string[] = ['name', 'age', 'date'];
+
   constructor(private myapi: ApiService) {}
 
   ngOnInit() {
