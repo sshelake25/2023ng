@@ -1,29 +1,29 @@
 <p>patient-info works!</p>
-<form novalidate>
+{{singUpForm.value | json}}
+<form novalidate [formGroup]="singUpForm" >
   <fieldset>
     <div class="form-group">
       <label>First Name</label>
-      <input type="text" class="form-control" />
+      <input formControlName="firstName"  type="text" class="form-control" />
     </div>
     <div class="form-group">
       <label>Last Name</label>
-      <input type="text" class="form-control" />
+      <input formControlName="lastName" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control" />
+      <input  formControlName="email"  type="email" class="form-control" />
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" class="form-control" />
+      <input  formControlName="password" type="password" class="form-control" />
     </div>
     <div class="form-group">
       <label>Language</label>
-      <select class="form-control">
-        <option value="">Please select a language</option>
-        
-        <option value="lg.code"  *ngFor="let lg of langs">{{lg.lang}}</option>
+      <select class="form-control" formControlName="lang">
+        <option value="hello">Please select a language</option>
+        <option [value]="lg"  *ngFor="let lg of langs">{{lg.lang}}</option>
       </select>
     </div>
   </fieldset>
