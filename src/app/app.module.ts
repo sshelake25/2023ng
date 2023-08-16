@@ -23,6 +23,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { TestImageDirective } from './test-image.directive';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    FormsModule
-  
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,30 +1,67 @@
 <p>patient-info works!</p>
-{{singUpForm.value | json}}
-<form novalidate [formGroup]="singUpForm" >
+{{ forms["firstName"].value }}
+
+{{ singUpForm.controls["firstName"].value }}
+
+<br />
+{{ singUpForm.valid | json }}
+
+<pre>touched? {{ singUpForm.controls["firstName"].touched | json }} </pre>
+<pre>Dirty? {{ singUpForm.controls["email"].dirty }}</pre>
+<pre>Valid? {{ singUpForm.controls["firstName"].valid }}</pre>
+<form novalidate [formGroup]="singUpForm">
   <fieldset>
     <div class="form-group">
-      <label>First Name</label>
-      <input formControlName="firstName"  type="text" class="form-control" />
+      <label>*First Name</label>
+      <input formControlName="firstName" type="text" class="form-control" />
+
+      <!-- validation error message for first name -->
+      <!-- control statr{{  forms['firstName'].valid}}
+      {{forms['firstName'].errors | json}} -->
+      <div
+        *ngIf="
+          forms['firstName'].invalid &&
+          (forms['firstName'].dirty || forms['firstName'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div class="error" *ngIf="forms['firstName'].errors?.['required']">
+          First Name is required.
+        </div>
+        <div  class="error" *ngIf="forms['firstName'].errors?.['maxlength']">
+          first Name should not 10 excced characters .
+        </div>
+      </div>
+
     </div>
     <div class="form-group">
-      <label>Last Name</label>
+      <label>*Last Name</label>
       <input formControlName="lastName" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
-      <label>Email</label>
-      <input  formControlName="email"  type="email" class="form-control" />
+      <label>*Email</label>
+      <input formControlName="email" type="email" class="form-control" />
     </div>
     <div class="form-group">
-      <label>Password</label>
-      <input  formControlName="password" type="password" class="form-control" />
+      <label>*Password</label>
+      <input formControlName="password" type="password" class="form-control" />
     </div>
     <div class="form-group">
       <label>Language</label>
       <select class="form-control" formControlName="lang">
         <option value="hello">Please select a language</option>
-        <option [value]="lg"  *ngFor="let lg of langs">{{lg.lang}}</option>
+        <option [value]="lg" *ngFor="let lg of langs">{{ lg.lang }}</option>
       </select>
     </div>
   </fieldset>
+  <button
+    [disabled]="singUpForm.invalid"
+    id="basic"
+    type="button"
+    mat-button
+    (click)="handleSubmit()"
+  >
+    Submit Form
+  </button>
 </form>

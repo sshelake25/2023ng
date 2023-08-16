@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 interface langCofi {
   lang: string;
@@ -20,12 +20,28 @@ export class PatientInfoComponent {
   ];
 
   public singUpForm: FormGroup = new FormGroup({
-    firstName: new FormControl('shiney'),
-    lastName: new FormControl(''),
-    email: new FormControl(""),
-    password: new FormControl(""),
-    lang: new FormControl("")
+    firstName: new FormControl('shiney', [
+      Validators.required,
+      Validators.maxLength(10),
+    ]),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.email),
+    password: new FormControl('', [
+      Validators.minLength(5),
+      Validators.required,
+      Validators.maxLength(16),
+    ]),
+    lang: new FormControl(''),
   });
 
   ngOnInit() {}
+
+  handleSubmit() {
+    //alert('clicked')
+  }
+ 
+  //created gettter method to simply accessing control in html
+  get forms() {
+    return this.singUpForm.controls;
+  }
 }
