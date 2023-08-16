@@ -13,4 +13,8 @@ export class ApiService {
 
     return this.http.get(apiURL); //Observalble
   }
+
+  submitUserDetails (data: any) {
+        return this.http.post('', data)
+  }
 }

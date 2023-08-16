@@ -28,15 +28,25 @@
         <div class="error" *ngIf="forms['firstName'].errors?.['required']">
           First Name is required.
         </div>
-        <div  class="error" *ngIf="forms['firstName'].errors?.['maxlength']">
+        <div class="error" *ngIf="forms['firstName'].errors?.['maxlength']">
           first Name should not 10 excced characters .
         </div>
       </div>
-
     </div>
     <div class="form-group">
       <label>*Last Name</label>
       <input formControlName="lastName" type="text" class="form-control" />
+      <div
+        *ngIf="
+          forms['lastName'].invalid &&
+          (forms['lastName'].dirty || forms['lastName'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div class="error" *ngIf="forms['lastName'].errors?.['required']">
+          Last Name is required.
+        </div>
+      </div>
     </div>
 
     <div class="form-group">

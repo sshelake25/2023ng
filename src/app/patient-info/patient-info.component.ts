@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 interface langCofi {
   lang: string;
@@ -34,12 +35,23 @@ export class PatientInfoComponent {
     lang: new FormControl(''),
   });
 
+  constructor(private apiSrv: ApiService) {}
+
   ngOnInit() {}
 
   handleSubmit() {
-    //alert('clicked')
+    console.log(this.singUpForm.value);
+
+    this.apiSrv.submitUserDetails(this.singUpForm.value).subscribe({
+      next: () => {
+        console.log('Your form has been subit success');
+      },
+      error: (error) => {
+        console.log('failed !!!');
+      },
+    });
   }
- 
+
   //created gettter method to simply accessing control in html
   get forms() {
     return this.singUpForm.controls;
