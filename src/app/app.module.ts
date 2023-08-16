@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { TestImageDirective } from './test-image.directive';
+import { PatientInfoComponent } from './patient-info/patient-info.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TestImageDirective } from './test-image.directive';
     NotFoundComponent,
     AnimalHistoryComponent,
     HomeComponent,
-    TestImageDirective
+    TestImageDirective,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule,

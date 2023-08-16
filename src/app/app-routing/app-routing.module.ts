@@ -6,6 +6,7 @@ import { BirthHistoryComponent } from '../birth-history/birth-history.component'
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { PatientHistoryComponent } from '../patient-history/patient-history.component';
 import { HomeComponent } from '../home/home.component';
+import { PatientInfoComponent } from '../patient-info/patient-info.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,13 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'patient-info',
+    component:PatientInfoComponent,
+    
+  },
+
+
 
   { path: '**', component: NotFoundComponent },
 ]; // sets up routes constant where you define your routes
