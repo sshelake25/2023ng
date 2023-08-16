@@ -17,4 +17,8 @@ export class ApiService {
   submitUserDetails (data: any) {
         return this.http.post('', data)
   }
+
+  getUser() {
+    return this.http.get('https://reqres.in/api/users/');
+  }
 }

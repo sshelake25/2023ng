@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ApiService } from '../api.service';
 
 interface langCofi {
@@ -35,9 +40,32 @@ export class PatientInfoComponent {
     lang: new FormControl(''),
   });
 
-  constructor(private apiSrv: ApiService) {}
+  //helper service by ng team to create complex form,
+  profileForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.maxLength],
+  });
 
-  ngOnInit() {}
+  // - resubale i
+  //
+  //
+  //Configgration -- scree
+
+  //5 forms -->
+  //
+  userDetails: any;
+  constructor(private apiSrv: ApiService, private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.apiSrv.getUser().subscribe({
+      next: (result) => {
+        this.userDetails = result;
+      },
+      error: (error) => {
+        console.log('failed !!!');
+      },
+    });
+  }
 
   handleSubmit() {
     console.log(this.singUpForm.value);

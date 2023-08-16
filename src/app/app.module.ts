@@ -7,10 +7,8 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MasterActionComponent } from './master-action/master-action.component';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
+
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { BirthHistoryComponent } from './birth-history/birth-history.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -18,12 +16,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AnimalHistoryComponent } from './animal-history/animal-history.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+
 import { TestImageDirective } from './test-image.directive';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+
+import { ThirdParyModulesModule } from './third-pary-modules/third-pary-modules.module';
 
 @NgModule({
   declarations: [
@@ -38,23 +36,18 @@ import {MatButtonModule} from '@angular/material/button';
     AnimalHistoryComponent,
     HomeComponent,
     TestImageDirective,
-    PatientInfoComponent
+    PatientInfoComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatTabsModule,
-    MatIconModule,
     AppRoutingModule,
     HttpClientModule,
-    MatTableModule,
-    MatCheckboxModule,
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule
+    ThirdParyModulesModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
