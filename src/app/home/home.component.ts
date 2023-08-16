@@ -61,13 +61,26 @@ export class HomeComponent implements OnInit {
 
   public timer = from([1, 2, 3]);
 
-  public configs?: any;
+  public configs?: any;;
+
+  public data = ELEMENT_DATA
 
   configDisplayedColumns: string[] = ['checkbox', 'name', 'age', 'date'];
 
   @ViewChild(MatTable, { static: true }) table: any;
 
   constructor(private myapi: ApiService) {}
+
+  myuser = [
+    {
+      name: 'sss',
+      age: 20
+    },
+    {
+      name: 'ff',
+      age: 30
+    }
+  ]
 
   ngOnInit() {
   

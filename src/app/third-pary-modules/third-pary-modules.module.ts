@@ -7,18 +7,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
+  exports: [
     MatButtonModule,
     MatSlideToggleModule,
     MatTabsModule,
     MatIconModule,
     MatTableModule,
     MatCheckboxModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class ThirdParyModulesModule { }

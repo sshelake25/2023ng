@@ -22,6 +22,7 @@ import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ThirdParyModulesModule } from './third-pary-modules/third-pary-modules.module';
+import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ThirdParyModulesModule } from './third-pary-modules/third-pary-modules.
     HomeComponent,
     TestImageDirective,
     PatientInfoComponent,
+    GridWrapperComponent,
   ],
   imports: [
     BrowserModule,
