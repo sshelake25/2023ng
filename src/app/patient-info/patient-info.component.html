@@ -1,5 +1,27 @@
 
 <!-- {{userDetails  | json}} -->
+
+<h2>Template based form</h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="user.name">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="user.email">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="submitted">
+  <h2>You submitted:</h2>
+  <div>Name: {{ user.name }}</div>
+  <div>Email: {{ user.email }}</div>
+</div>
+
+<br>
 <p>patient-info works!</p>
 {{ forms["firstName"].value }}
 

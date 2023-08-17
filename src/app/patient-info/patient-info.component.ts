@@ -3,6 +3,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  NgForm,
   Validators,
 } from '@angular/forms';
 import { ApiService } from '../api.service';
@@ -18,6 +19,22 @@ interface langCofi {
   styleUrls: ['./patient-info.component.css'],
 })
 export class PatientInfoComponent {
+  user = {
+    name: '',
+    email: ''
+  };
+
+  submitted = false;
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.submitted = true;
+      console.log(this.user)
+      console.log(form.value)
+      // Typically, you'd send the form data to a server here.
+    }
+  }
+  
   public langs: langCofi[] = [
     { lang: 'english', code: 'en-Us' },
     { lang: 'german', code: 'jn-Us' },
