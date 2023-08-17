@@ -1,13 +1,26 @@
 <p>patient-history works!</p>
 
-<div appDescription="This explain desc">applied appDescription directive</div>
+<div appDescription descriptionText="without other param">
+  applied appDescription directive
+</div>
 <button appDescription="Click this button to submit the form">Submit</button>
+<br />
+<!-- Parameterized usage -->
+<button
+  appDescription
+  [descriptionText]="'This is a custom description.'"
+  descriptionBgColor="blue"
+  descriptionTextColor="yellow"
+  descriptionPosition="top"
+>
+  Hover over me
+</button>
 
 <ng-container *ngIf="true">
-   <h2> I am in ng contrainr </h2> 
+  <h2>I am in ng contrainr</h2>
 </ng-container>
 
-<div appTestImage>I am calling directive </div>
+<div appTestImage>I am calling directive</div>
 
 I am a child route of patine patient-history
 <router-outlet></router-outlet>
