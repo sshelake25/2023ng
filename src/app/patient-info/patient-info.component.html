@@ -1,4 +1,3 @@
-
 <!-- {{userDetails  | json}} -->
 
 <h2>Template based form</h2>
@@ -6,11 +5,24 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" [(ngModel)]="user.name">
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="user.name"
+      required
+      minlength="5"
+     
+      #myName="ngModel"
+    />
+  </div>
+  {{myName.errors | json}}
+  <div *ngIf="myName.touched &&  myName.invalid" class="error">
+    Name is required field
   </div>
   <div>
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" [(ngModel)]="user.email">
+    <input type="email" id="email" name="email" [(ngModel)]="user.email" />
   </div>
   <button type="submit">Submit</button>
 </form>
@@ -21,7 +33,7 @@
   <div>Email: {{ user.email }}</div>
 </div>
 
-<br>
+<br />
 <p>patient-info works!</p>
 {{ forms["firstName"].value }}
 
