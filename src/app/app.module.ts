@@ -11,7 +11,7 @@ import { MasterActionComponent } from './master-action/master-action.component';
 
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { BirthHistoryComponent } from './birth-history/birth-history.component';
-import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AnimalHistoryComponent } from './animal-history/animal-history.component';
 import { HomeComponent } from './home/home.component';

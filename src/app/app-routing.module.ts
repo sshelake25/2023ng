@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
-import { AnimalHistoryComponent } from '../animal-history/animal-history.component';
-import { BirthHistoryComponent } from '../birth-history/birth-history.component';
-import { NotFoundComponent } from '../not-found/not-found.component';
-import { PatientHistoryComponent } from '../patient-history/patient-history.component';
-import { HomeComponent } from '../home/home.component';
-import { PatientInfoComponent } from '../patient-info/patient-info.component';
-import { MyauthGuard } from '../myauth.guard';
+import { AnimalHistoryComponent } from './animal-history/animal-history.component';
+import { BirthHistoryComponent } from './birth-history/birth-history.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PatientHistoryComponent } from './patient-history/patient-history.component';
+import { HomeComponent } from './home/home.component';
+import { PatientInfoComponent } from './patient-info/patient-info.component';
+import { MyauthGuard } from './myauth.guard';
 
 const routes: Routes = [
   {
