@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AnimalHistoryComponent } from './animal-history/animal-history.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { TestImageDirective } from './test-image.directive';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThirdParyModulesModule } from './third-pary-modules/third-pary-modules.module';
 import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
 import { CapitalizePipe } from './capitalize.pipe';
+import { SimpleInterceptor } from './simple.interceptor';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { CapitalizePipe } from './capitalize.pipe';
     FormsModule,
     ThirdParyModulesModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
