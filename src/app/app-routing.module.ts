@@ -43,6 +43,8 @@ const routes: Routes = [
     path: 'patient-info',
     component: PatientInfoComponent,
   },
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 
   { path: '**', component: NotFoundComponent },
 ]; // sets up routes constant where you define your routes
