@@ -7,22 +7,25 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 import { PatientHistoryComponent } from '../patient-history/patient-history.component';
 import { HomeComponent } from '../home/home.component';
 import { PatientInfoComponent } from '../patient-info/patient-info.component';
+import { MyauthGuard } from '../myauth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     data: {
-      title: "home",
-    }
+      title: 'home',
+    },
   },
   {
     path: 'birth-history',
     component: BirthHistoryComponent,
     data: {
-      title: "hell0",
-      configs: "dadsa"
-    }
+      title: 'hell0',
+      configs: 'dadsa',
+    },
+    //routes protection with help of auth grading
+    canActivate: [MyauthGuard],
   },
   {
     path: 'patient-history',
@@ -30,17 +33,16 @@ const routes: Routes = [
     children: [
       {
         path: 'aminal-history',
-        component: AnimalHistoryComponent
-      }
-    ]
+        component: AnimalHistoryComponent,
+      },
+    ],
+    //routes protection with help of auth grading
+    canActivate: [MyauthGuard],
   },
   {
     path: 'patient-info',
-    component:PatientInfoComponent,
-    
+    component: PatientInfoComponent,
   },
-
-
 
   { path: '**', component: NotFoundComponent },
 ]; // sets up routes constant where you define your routes
