@@ -1,18 +1,24 @@
 <p>birth-history works!</p>
-date pipe -->{{birthdate | date}}<br>
-date pipe with param -->{{birthdate | date:'medium'}}
-<br>
+date pipe -->{{ birthdate | date }}<br />
+date pipe with param -->{{ birthdate | date : "medium" }}
+<br />
 
-{{name | uppercase }}
+{{ name | uppercase }}
 
-<h2>
-    Custome pipe
-</h2>
+<h2>Custome pipe</h2>
 
-Without custom pipe ===>{{name }}
-<br>
-with custome pipe ===> {{name | capitalize }}
+Without custom pipe ===>{{ name }}
+<br />
+with custome pipe ===> {{ name | capitalize }}
 
-<div>{{ 'hello world' | capitalize:true }}</div>
+<div>{{ "hello world" | capitalize : true }}</div>
 
-<div>{{ 'hello world' | capitalize:false }}</div>
+<div>{{ "hello world" | capitalize : false }}</div>
+
+<div *ngIf="persons | async as personsVal">
+  {{ personsVal }}I am async piple {{ persons | async }}
+
+  <div *ngFor="let per of personsVal">
+    {{per.name}} = {{per.age}}
+  </div>
+</div>
