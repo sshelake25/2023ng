@@ -62,44 +62,49 @@ export class HomeComponent implements OnInit {
 
   public timer = from([1, 2, 3]);
 
-  public configs?: any;;
+  public configs?: any;
 
-  public data = ELEMENT_DATA
+  public data = ELEMENT_DATA;
 
   configDisplayedColumns: string[] = ['checkbox', 'name', 'age', 'date'];
 
   @ViewChild(MatTable, { static: true }) table: any;
 
-  constructor(private storageService: StorageService, private myapi: ApiService) {
+  constructor(
+    private storageService: StorageService,
+    private myapi: ApiService
+  ) {
     // Using Local Storage
     this.storageService.setLocal('username', 'JohnDoe');
-   // this.storageService.setLocal('Config', this.configDisplayedColumns);
+    // this.storageService.setLocal('Config', this.configDisplayedColumns);
     console.log(this.storageService.getLocal('username')); // Outputs: JohnDoe
     //this.storageService.removeLocal('username');
 
     // Using Session Storage
     this.storageService.setSession('sessionToken', '1234567890');
-   // this.storageService.setSession('sessinoCong', ELEMENT_DATA);
+    // this.storageService.setSession('sessinoCong', ELEMENT_DATA);
     console.log(this.storageService.getSession('sessionToken')); // Outputs: 1234567890
-   // this.storageService.removeSession('sessionToken');
+    // this.storageService.removeSession('sessionToken');
   }
 
   myuser = [
     {
       name: 'sss',
-      age: 20
+      age: 20,
     },
     {
       name: 'ff',
-      age: 30
-    }
-  ]
+      age: 30,
+    },
+  ];
 
   ngOnInit() {
-  
+    //api call to see erro hanlding
+    this.myapi.fetchData().subscribe();
+
     this.myapi.getConfigs().subscribe({
       next: (success) => {
-         this.configs = success;
+        this.configs = success;
         this.configs = [];
       },
       error: (error) => {
@@ -174,7 +179,7 @@ export class HomeComponent implements OnInit {
     //   new CdkRowDef({ columns: this.configDisplayedColumns })
     // );
 
-    this.table.removeColumnDef(new CdkColumnDef('name'))
+    this.table.removeColumnDef(new CdkColumnDef('name'));
 
     //this.table?.setNoDataRow(null);
     // extractCellTemplate(this.configDisplayedColumns[0])
