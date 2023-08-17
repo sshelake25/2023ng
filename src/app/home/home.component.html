@@ -1,16 +1,18 @@
 <p>home works!</p>
 
 <app-grid-wrapper
-[columns]="['position', 'name', 'weight', 'symbol']"
-[data]="data"
-[usePagination]="true"
-[useSorting]="false">
+  [enableRowSelection]="false"
+  [columns]="['position', 'name', 'weight', 'symbol']"
+  [data]="data"
+  [usePagination]="true"
+  [useSorting]="false"
+>
 </app-grid-wrapper>
 
 <app-grid-wrapper
-[columns]="['name', 'age']"
-[data]="myuser"
-[usePagination]="true"
-[useSorting]="false">
+  [columns]="['name', 'age']"
+  [data]="myuser"
+  [usePagination]="true"
+  [useSorting]="false"
+>
 </app-grid-wrapper>
-
