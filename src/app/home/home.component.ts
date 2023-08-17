@@ -14,6 +14,7 @@ import { ApiService } from '../api.service';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CdkColumnDef, CdkRowDef } from '@angular/cdk/table';
+import { StorageService } from '../storage.service';
 
 export interface PeriodicElement {
   name: string;
@@ -69,7 +70,19 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(MatTable, { static: true }) table: any;
 
-  constructor(private myapi: ApiService) {}
+  constructor(private storageService: StorageService, private myapi: ApiService) {
+    // Using Local Storage
+    this.storageService.setLocal('username', 'JohnDoe');
+   // this.storageService.setLocal('Config', this.configDisplayedColumns);
+    console.log(this.storageService.getLocal('username')); // Outputs: JohnDoe
+    //this.storageService.removeLocal('username');
+
+    // Using Session Storage
+    this.storageService.setSession('sessionToken', '1234567890');
+   // this.storageService.setSession('sessinoCong', ELEMENT_DATA);
+    console.log(this.storageService.getSession('sessionToken')); // Outputs: 1234567890
+   // this.storageService.removeSession('sessionToken');
+  }
 
   myuser = [
     {
