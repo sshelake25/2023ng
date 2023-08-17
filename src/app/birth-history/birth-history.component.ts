@@ -7,6 +7,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./birth-history.component.css'],
 })
 export class BirthHistoryComponent {
+
+  birthdate= new Date(1988, 3, 15);
+  name = "hello world"
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
