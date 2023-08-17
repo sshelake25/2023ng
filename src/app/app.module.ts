@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,8 @@ import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { SimpleInterceptor } from './simple.interceptor';
 
+import {GlobalErrorHandar} from './global-error-handar'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,11 @@ import { SimpleInterceptor } from './simple.interceptor';
     FormsModule,
     ThirdParyModulesModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
+    { provide: ErrorHandler, useClass: GlobalErrorHandar },
+  ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
