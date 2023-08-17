@@ -26,7 +26,8 @@ import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { SimpleInterceptor } from './simple.interceptor';
 
-import {GlobalErrorHandar} from './global-error-handar'
+import {GlobalErrorHandar} from './global-error-handar';
+import { DescriptionDirective } from './description.directive'
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {GlobalErrorHandar} from './global-error-handar'
     PatientInfoComponent,
     GridWrapperComponent,
     CapitalizePipe,
+    DescriptionDirective,
   ],
   imports: [
     BrowserModule,
