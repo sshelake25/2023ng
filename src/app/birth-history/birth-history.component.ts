@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BirthHistoryComponent {
 
   birthdate= new Date(1988, 3, 15);
-  name = "hello world"
+  name = "hello world i am good"
 
   constructor(private route: ActivatedRoute) {}
 

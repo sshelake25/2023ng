@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ThirdParyModulesModule } from './third-pary-modules/third-pary-modules.module';
 import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
+import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
     TestImageDirective,
     PatientInfoComponent,
     GridWrapperComponent,
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,
