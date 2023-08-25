@@ -3,6 +3,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { merge, startWith, switchMap, catchError, map, of } from 'rxjs';
 import { UserService } from '../user.service';
+import { Keys } from '@progress/kendo-angular-common';
+import { CellClickEvent, CellCloseEvent } from '@progress/kendo-angular-grid';
+import { State } from '@progress/kendo-data-query';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export interface GithubApi {
   items: GithubIssue[];
@@ -62,14 +66,14 @@ export class UserListComponent implements OnInit, AfterViewInit {
       ProductID: 3,
       ProductName: 'Chai',
       UnitPrice: 18,
-      Category: {
-        CategoryID: 1,
-        CategoryName: 'Beverages',
-      },
+      // Category: {
+      //   CategoryID: 1,
+      //   CategoryName: 'Beverages',
+      // },
     },
   ];
 
-  constructor(private userSrv: UserService) {}
+  constructor(private userSrv: UserService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
 
@@ -84,6 +88,52 @@ export class UserListComponent implements OnInit, AfterViewInit {
   saveHandler(row: any) {
     console.log(row);
   }
+  //cell handlers
+
+  public onStateChange(state: State): void {
+    // this.gridState = state;
+    // this.editService.read();
+  }
+
+  public cellClickHandler(args: CellClickEvent): void {
+    console.log(args);
+
+    if (!args.isEdited) {
+      args.sender.editCell(
+        args.rowIndex,
+        args.columnIndex,
+        this.createFormGroup(args.dataItem)
+      );
+    }
+  }
+
+  public createFormGroup(dataItem: any): FormGroup {
+    return this.formBuilder.group({
+      ProductID: dataItem.ProductID, 
+      ProductName: [dataItem.ProductName, Validators.required],
+      UnitPrice: dataItem.UnitPrice,
+    });
+  }
+
+  public cellCloseHandler(args: CellCloseEvent): void {
+    const { formGroup, dataItem } = args;
+    if (!formGroup.valid) {
+      // prevent closing the edited cell if there are invalid values.
+      args.preventDefault();
+    } else if (formGroup.dirty) {
+      if (args.originalEvent && args.originalEvent.keyCode === Keys.Escape) {
+        return;
+      }
+
+       //api call cell change 
+       //skdjask
+
+      // this.editService.assignValues(dataItem, formGroup.value);
+      // this.editService.update(dataItem);
+    }
+  }
+
+  //cell handaer ends
 
   removeHandler(row: any) {
     let rowToRemove = row.dataItem;
@@ -92,7 +142,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
       (item) => item.ProductID !== rowToRemove.ProductID
     );
 
-    /// reove api return from service 
+    /// reove api return from service
 
     this.gridData = removedData;
   }
