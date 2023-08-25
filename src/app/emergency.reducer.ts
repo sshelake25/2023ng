@@ -1,14 +1,16 @@
 import { createReducer, on } from '@ngrx/store';
-import { UserActions } from './user.actions';
+import { EmergencyActions } from './emergency.actions';
 
-export const userFeatureKey = 'user';
+export const emergencyFeatureKey = 'emergency';
 
 export interface State {
-  list: Array<any>;
+  ward: [];
+  doctor: []
 }
 
 export const initialState: State = {
-  list: [1, 2, 3, 4],
+  ward: [],
+  doctor: []
 };
 
 export const reducer = createReducer(initialState);
