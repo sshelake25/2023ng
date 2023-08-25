@@ -1,4 +1,4 @@
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,8 @@ import {GlobalErrorHandar} from './global-error-handar';
 import { DescriptionDirective } from './description.directive';
 import { UserListComponent } from './user-list/user-list.component'
 import { GridModule } from '@progress/kendo-angular-grid';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -59,7 +61,9 @@ import { GridModule } from '@progress/kendo-angular-grid';
     ReactiveFormsModule,
     FormsModule,
     ThirdParyModulesModule,
-    GridModule, // kendoo
+    GridModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), // kendoo
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
