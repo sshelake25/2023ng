@@ -56,7 +56,6 @@ export class UserListComponent implements OnInit, AfterViewInit {
           console.log(error);
         },
       });
-
    
   }
 }
