@@ -32,6 +32,7 @@ import { UserListComponent } from './user-list/user-list.component'
 import { GridModule } from '@progress/kendo-angular-grid';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers, metaReducers } from './reducers';
 
 
 @NgModule({
@@ -62,8 +63,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     FormsModule,
     ThirdParyModulesModule,
     GridModule,
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), // kendoo
+
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    isDevMode() ? StoreDevtoolsModule.instrument() : [], // kendoo
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
