@@ -8,6 +8,7 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
 import { HomeComponent } from './home/home.component';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { MyauthGuard } from './myauth.guard';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
   },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'user', component: UserListComponent },
 
   { path: '**', component: NotFoundComponent },
 ]; // sets up routes constant where you define your routes

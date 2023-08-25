@@ -27,7 +27,8 @@ import { CapitalizePipe } from './capitalize.pipe';
 import { SimpleInterceptor } from './simple.interceptor';
 
 import {GlobalErrorHandar} from './global-error-handar';
-import { DescriptionDirective } from './description.directive'
+import { DescriptionDirective } from './description.directive';
+import { UserListComponent } from './user-list/user-list.component'
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { DescriptionDirective } from './description.directive'
     GridWrapperComponent,
     CapitalizePipe,
     DescriptionDirective,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
