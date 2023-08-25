@@ -26,14 +26,14 @@ import { GridWrapperComponent } from './grid-wrapper/grid-wrapper.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { SimpleInterceptor } from './simple.interceptor';
 
-import {GlobalErrorHandar} from './global-error-handar';
+import { GlobalErrorHandar } from './global-error-handar';
 import { DescriptionDirective } from './description.directive';
-import { UserListComponent } from './user-list/user-list.component'
+import { UserListComponent } from './user-list/user-list.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from './reducers';
-
+import { UsersPageComponent } from './users-page/users-page.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +53,7 @@ import { reducers, metaReducers } from './reducers';
     CapitalizePipe,
     DescriptionDirective,
     UserListComponent,
+    UsersPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,10 +64,8 @@ import { reducers, metaReducers } from './reducers';
     FormsModule,
     ThirdParyModulesModule,
     GridModule,
-
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     StoreModule.forRoot(reducers, { metaReducers }),
-    isDevMode() ? StoreDevtoolsModule.instrument() : [], // kendoo
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },

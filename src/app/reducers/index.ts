@@ -6,14 +6,17 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
+import * as fromUser from '../user.reducer';
 
 
 export interface State {
 
+  [fromUser.userFeatureKey]: fromUser.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
 
+  [fromUser.userFeatureKey]: fromUser.reducer,
 };
 
 
