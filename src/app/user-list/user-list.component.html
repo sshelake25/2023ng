@@ -1,11 +1,31 @@
 <h2>Kendo grid</h2>
 
-<kendo-grid [data]="gridData">
+<kendo-grid
+  [data]="gridData"
+  (edit)="editHandler($event)"
+  (cancel)="cancelHandler($event)"
+  (save)="saveHandler($event)"
+  (remove)="removeHandler($event)"
+  (add)="addHandler($event)"
+>
   <kendo-grid-column field="ProductID" title="ID"> </kendo-grid-column>
   <kendo-grid-column field="ProductName" title="Name"> </kendo-grid-column>
   <kendo-grid-column field="Category.CategoryName" title="Category">
   </kendo-grid-column>
   <kendo-grid-column field="UnitPrice" title="Price"> </kendo-grid-column>
+
+  <kendo-grid-command-column title="command" [width]="220">
+    <ng-template kendoGridCellTemplate let-isNew="isNew">
+      <button kendoGridEditCommand [primary]="true">Edit</button>
+      <button kendoGridRemoveCommand>Remove</button>
+      <button kendoGridSaveCommand>
+        {{ isNew ? "Add" : "Update" }}
+      </button>
+      <button kendoGridCancelCommand>
+        {{ isNew ? "Discard changes" : "Cancel" }}
+      </button>
+    </ng-template>
+  </kendo-grid-command-column>
 </kendo-grid>
 
 <br />

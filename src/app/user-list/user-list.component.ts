@@ -49,11 +49,57 @@ export class UserListComponent implements OnInit, AfterViewInit {
         CategoryName: 'Beverages',
       },
     },
+    {
+      ProductID: 2,
+      ProductName: 'butter',
+      UnitPrice: 18,
+      Category: {
+        CategoryID: 1,
+        CategoryName: 'Beverages',
+      },
+    },
+    {
+      ProductID: 3,
+      ProductName: 'Chai',
+      UnitPrice: 18,
+      Category: {
+        CategoryID: 1,
+        CategoryName: 'Beverages',
+      },
+    },
   ];
 
   constructor(private userSrv: UserService) {}
 
   ngOnInit(): void {}
+
+  editHandler(row: any) {
+    console.log(row);
+  }
+
+  cancelHandler(row: any) {
+    console.log(row);
+  }
+
+  saveHandler(row: any) {
+    console.log(row);
+  }
+
+  removeHandler(row: any) {
+    let rowToRemove = row.dataItem;
+
+    const removedData = this.gridData.filter(
+      (item) => item.ProductID !== rowToRemove.ProductID
+    );
+
+    /// reove api return from service 
+
+    this.gridData = removedData;
+  }
+
+  addHandler(row: any) {
+    console.log(row);
+  }
 
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
