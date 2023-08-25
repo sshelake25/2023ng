@@ -29,6 +29,8 @@ import { SimpleInterceptor } from './simple.interceptor';
 import {GlobalErrorHandar} from './global-error-handar';
 import { DescriptionDirective } from './description.directive';
 import { UserListComponent } from './user-list/user-list.component'
+import { GridModule } from '@progress/kendo-angular-grid';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { UserListComponent } from './user-list/user-list.component'
     ReactiveFormsModule,
     FormsModule,
     ThirdParyModulesModule,
+    GridModule, // kendoo
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
