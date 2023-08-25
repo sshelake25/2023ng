@@ -22,7 +22,7 @@ export interface GithubIssue {
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['created', 'state', 'number', 'title'];
+  displayedColumns: string[] = ['created', 'state', 'number', 'title', 'action'];
 
   data: GithubIssue[] = [];
 
