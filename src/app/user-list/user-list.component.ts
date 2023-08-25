@@ -22,7 +22,13 @@ export interface GithubIssue {
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['created', 'state', 'number', 'title', 'action'];
+  displayedColumns: string[] = [
+    'created',
+    'state',
+    'number',
+    'title',
+    'action',
+  ];
 
   data: GithubIssue[] = [];
 
@@ -32,6 +38,18 @@ export class UserListComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
+  public gridData: any[] = [
+    {
+      ProductID: 1,
+      ProductName: 'Chai',
+      UnitPrice: 18,
+      Category: {
+        CategoryID: 1,
+        CategoryName: 'Beverages',
+      },
+    },
+  ];
 
   constructor(private userSrv: UserService) {}
 
@@ -56,6 +74,5 @@ export class UserListComponent implements OnInit, AfterViewInit {
           console.log(error);
         },
       });
-   
   }
 }
